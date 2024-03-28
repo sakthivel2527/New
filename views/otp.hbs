@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification</title>
+    <style>
+
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    height: 200px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #44eb4c;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    max-width: 1000px;
+    padding: 40px;
+    background-color: #fff;
+    line-height: 40px;
+    box-shadow: 0 10px 10px -5px rgba(0,0,0,0.25);
+}
+
+.code-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.code{
+    border: 1px solid #eee;
+    border-radius: 5px;
+    font-size: 75px;
+    height: 120px;
+    width: 100px;
+    text-align: center;
+    margin: 1%;
+    font-weight: 300;
+    -moz-appearance: textfield;
+    
+}
+
+.code::-webkit-outer-spin-button,.code::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.code:valid{
+    border-color: #4df33e;
+    box-shadow: 0 10px 10px -5px rgba(0,0,0,0.25);
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info{
+    display: inline-block;
+    padding: 10px;
+    line-height: 20px;
+    max-width: 500ppx;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+button{
+    background-color: #09843D;
+    color: #fff;
+    margin-top: 10px;
+    width: 400px;
+    padding: 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #0bae4f;
+}
+
+a{
+    text-decoration: none;
+    color: #09843D;
+    font-weight: bold;
+}
+
+@media(max-width: 600px){
+    .code-container{
+        flex-wrap: wrap;
+    }
+
+    .code{
+        font-size: 60px;
+        height: 80px;
+        max-width: 70px;
+    }
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="../image/bg.jpg" />
+      <h2>OTP Verification</h2>
+      <p>Please type the OTP as shared on your email.</p>
+    <form action="/auth/otpverification" method="post">
+    <input type="hidden" name="email" name="email" value="{{email}}"/>
+    <p style="color: red;" id="my-paragraph">{{msg}}</p>
+      <div class="code-container">
+        <input
+          type="number"
+          class="code"
+          placeholder="0"
+          min="0"
+          max="9"
+          name="opt1"
+          required
+        />
+        <input
+          type="number"
+          class="code"
+          placeholder="0"
+          min="0"
+          max="9"
+          name="opt2"
+          required
+        />
+        <input
+          type="number"
+          class="code"
+          placeholder="0"
+          min="0"
+          max="9"
+          name="opt3"
+          required
+        />
+        <input
+          type="number"
+          class="code"
+          placeholder="0"
+          min="0"
+          max="9"
+          name="opt4"
+          required
+        />
+      </div>
+      <div class="footer">
+        <small class="info">OTP not recieved? <a href="#">RESEND</a></small>
+        <button type="submit">Submit</button>
+      </div>
+      </form>
+    </div>
+    <script>
+
+        const codes = document.querySelectorAll(".code")
+
+codes[0].focus()
+
+codes.forEach((code,idx) =>{
+    code.addEventListener("keydown", (e) =>{
+        if(e.key >= 0 && e.key <= 9){
+            codes[idx].value = ""
+            setTimeout(() => codes[idx + 1].focus())
+        }else if(e.key === "Backspace"){
+            setTimeout(() => codes[idx - 1].focus())
+        }
+    })
+})
+
+    </script>
+  </body>
+</html>

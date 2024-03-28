@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Sign in & Sign up </title>
+</script>
+    <script>
+      function pageLoaded() {
+         var p = document.getElementById("my-paragraph");
+  setTimeout(function() {
+    p.style.display = "none";
+  }, 2000);
+      }
+      
+     function validatePassword() {
+  var password = $("#pazzword").val();
+  var confirmPassword = $("#comfirmpassword").val();
+
+ {{!-- if ($('#phonenumber').val().length = 10) {
+    alert("PhoneNumber must be at 10 Digit long.");
+    return false;
+  } --}}
+
+  if (password.length < 8) {
+    alert("Password must be at least 8 characters long.");
+    return false;
+  }
+
+  if (password.length < 8) {
+    alert("Password must be at least 8 characters long.");
+    return false;
+  }
+
+  if (!/[A-Z]/.test(password)) {
+    alert("Password must contain at least one uppercase letter.");
+    return false;
+  }
+
+  if (!/[a-z]/.test(password)) {
+    alert("Password must contain at least one lowercase letter.");
+    return false;
+  }
+
+  if (!/\d/.test(password)) {
+    alert("Password must contain at least one number.");
+    return false;
+  }
+
+  if (password != confirmPassword) {
+    alert("Passwords do not match.");
+    return false;
+  }
+
+  return true;
+}
+
+function checkpassword() {
+  var password = $("#password").val();
+  
+   {{!-- if ($('#phonenumber').val().length <= 10) {
+    alert("PhoneNumber must be at 10 Digit long.");
+    return false;
+  } --}}
+
+  if (!/[A-Z]/.test(password)) {
+    alert("Password must contain at least one uppercase letter.");
+    return false;
+  }
+
+  if (!/[a-z]/.test(password)) {
+    alert("Password must contain at least one lowercase letter.");
+    return false;
+  }
+
+  if (!/\d/.test(password)) {
+    alert("Password must contain at least one number.");
+    return false;
+  }
+   return true;
+}
+   </script>
+  </head>
+  <body onload="pageLoaded();">
+    <div class="container">
+      <div class="forms-container">
+       
+        <div class="signin-signup">
+          
+          <form action="/auth/login" method="post" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+             <p style="color: red;" id="my-paragraph">{{msg}}</p>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="number" name="phonenumber" id="phonenumber" placeholder="Phone Number" required />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="password" id="password" placeholder="Password" required/>
+            </div>
+            <input type="submit" value="Login" class="btn solid" onclick="return checkpassword();"/> 
+             {{!-- <input type="submit" value="Login" class="btn solid"/> --}}
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>
+          <form action="/auth/register" method="post" class="sign-up-form">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" name="username" id="username" placeholder="username" required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" name="email" id="email" placeholder="Email" required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="number" name="phonenumber" id="phonenumber" placeholder="phone Number" required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="password" id="pazzword" placeholder="Password" required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="comfirmpassword" id="comfirmpassword" placeholder="Comfirm Password" required/>
+            </div>
+            <input type="submit" class="btn" value="Sign up" onclick="return validatePassword();" /> 
+            {{!-- <input type="submit" class="btn" value="Sign up" /> --}}
+           
+          </form>
+          
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>New here ?</h3>
+            <p>
+              Welcome back to our Matrimony Application. Login to your account and continue your quest to find the perfect life partner.
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Sign up
+            </button>
+          </div>
+          <img src="./image/wed.svg" class="image" alt="" ></img>
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>One of us ?</h3>
+            <p>
+              Ready to embark on your journey to find the perfect life partner? Sign up now and create your profile on our Matrimony Application.
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Sign in
+            </button>
+          </div>
+          <img src="/image/sign.svg" class="image" alt="" ></img>
+        </div>
+      </div>
+    </div>
+
+    <script >
+        const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector(".container");
+
+sign_up_btn.addEventListener("click", () => {
+  container.classList.add("sign-up-mode");
+});
+
+sign_in_btn.addEventListener("click", () => {
+  container.classList.remove("sign-up-mode");
+});
+    </script>
+  </body>
+</html>

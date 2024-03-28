@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styleregister.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <title>Regisration Step one</title> 
+</head>
+<body>
+    <div class="container">
+        <header>Registration</header>
+
+        <form action="/auth/registation2" method="post">
+        <input type="hidden" name="id" value="{{user_id}}"/>
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Education & Occupation Info</span>
+                
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Highest Education</label>
+                            <input type="text" name="higeducation" id="higeducation" placeholder="Highest Education" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Employment Type</label>
+                            <select name="emptype" id="emptype" required>
+                                <option disabled selected>Select Type</option>
+                                <option>Private</option>
+                                <option>Government</option>
+                                <option>Business</option>Divorce
+                                <option>Defence</option>
+                            </select>
+                        </div>
+
+                         <div class="input-field">
+                            <label>Monthly Income INR</label>
+                           <input type="number" name="income" id="income" placeholder="Enter your Income" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Company Name</label>
+                           <input type="text" name="companyname" id="companyname" placeholder="Enter your Company Name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Designation</label>
+                            <input type="text" name="designation" id="designation" placeholder="Enter your Designation" required>
+                        </div>
+
+                         <div class="input-field">
+                            <label>Annual Income INR</label>
+                           <input type="number" name="annualincome" id="annualincome" placeholder="Enter your Annual Income" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Astrological Info</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Star</label>
+                            <select class="form-control" name="star" id="star">
+                        <option value="SelectState">Select Star</option>
+                        <option value="Ashvins">Ashvins</option>
+                        <option value="Bharani">Bharani</option>
+                        <option value="Krittika">Krittika</option>
+                        <option value="Rohini">Rohini</option>
+                        <option value="Mrigshirsha">Mrigshirsha</option>
+                        <option value="Ardra">Ardra</option>
+                        <option value="Punarvasu">Punarvasu</option>
+                        <option value="Pushya">Pushya</option>
+                        <option value="Ashlesha">v</option>
+                        <option value="Magha">Magha</option>
+                        <option value="Purvaphalguni">Purvaphalguni</option>
+                        <option value="Uttaraphalguni">Uttaraphalguni</option>
+                        <option value="Hasta">Hasta</option>
+                        <option value="Chitra">Chitra</option>
+                        <option value="Swati">Swati</option>
+                        <option value="Vishakha">Vishakha</option>
+                        <option value="Anuradha">Anuradha</option>
+                        <option value="Jyeshtha">Jyeshtha</option>
+                        <option value="Mula">Mula</option>
+                        <option value="Purvashadha">Purvashadha</option>
+                        <option value="Uttarashadha">Uttarashadha</option>
+                        <option value="Shravana">Shravana</option>
+                        <option value="Dhanishtha">Dhanishtha</option>
+                        <option value="Shatbhisha">Shatbhisha</option>
+                        <option value="Poorvabhadrapada">Poorvabhadrapada</option>
+                        <option value="Uttarabhadrapada">Uttarabhadrapada</option>
+                        <option value="Revati">Revati</option>
+                      </select>
+                        </div>
+
+                        <div class="input-field">
+                             <label>Rassi</label>
+                              <select class="form-control" name="rassi" id="rassi">
+                        <option value="SelectState">Select Rassi</option>
+                        <option value="Mesham">Mesham</option>
+                        <option value="Rishabam">Rishabam</option>
+                        <option value="Mithunam">Mithunam</option>
+                        <option value="Kadagam">Kadagam</option>
+                        <option value="Simmam">Simmam</option>
+                        <option value="Kanni">Kanni</option>
+                        <option value="Thulaam">Thulaam</option>
+                        <option value="Viruchagam">Viruchagam</option>
+                        <option value="Dhanusu">Dhanusu</option>
+                        <option value="Magaram">Magaram</option>
+                        <option value="Kumbam">Kumbam</option>
+                        <option value="Meenam">Meenam</option>
+                      </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Dhosham</label>
+                            <input type="text" name="dhosham" id="dhosham" placeholder="Dhosham" required>
+                        </div>
+
+                         <div class="input-field">
+                            <label>Food Habits</label>
+                           <select name="food" id="food" required>
+                                <option disabled selected>Select Habits</option>
+                                <option>Vegetarian</option>
+                                <option>Non Vegetarian</option>
+                                <option>Eggetarian</option>
+                            </select>   
+                        </div>
+
+                        <div class="input-field">
+                            <label>Birth Time</label>
+                            <input type="time" name="birthtime" id="birthtime" placeholder="Birth Time" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Birth Place</label>
+                            <input type="text" name="birthplace" id="birthplace" placeholder="Birth Place" required>
+                        </div>
+                    </div>
+
+                    <button class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+            </div>
+
+            <div class="form second">
+                <div class="details address">
+                    <span class="title">Family Info</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Family Status</label>
+                             <select name="familystatus" id="familystatus" required>
+                                <option disabled selected>Select Status</option>
+                                <option>Middle Class</option>
+                                <option>Upper Middel Class</option>
+                                <option>Rich</option>
+                                <option>Affluent</option>
+                            </select> 
+                        </div>
+
+                        <div class="input-field">
+                            <label>Family Type</label>
+                             <select name="familytype" id="familytype" required>
+                                <option disabled selected>Select Type</option>
+                                <option>Joint Family</option>
+                                <option>Nuclear Family</option>
+                                <option>Others</option>
+                            </select> 
+                         </div>
+
+                        <div class="input-field">
+                            <label>Parents Number-1</label>
+                             <input type="number" name="Parentsnum" id="Parentsnum" placeholder="Parents Number-1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Parents Number-2</label>
+                             <input type="number" name="Parentsnum2" id="Parentsnum"2 placeholder="Parents Number-2" required>
+                          </div>
+
+                        <div class="input-field">
+                            <label>Parents Monthly Income</label>
+                            <input type="number" name="parentsincome" id="parentsincome" placeholder="Parents Monthly Income" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Description</label>
+                            <input type="text" name="description" id="description"  placeholder="Description" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details family">
+                    <div class="title">Sibilings Info</span></div>
+                    
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Sibilings Name</label>
+                            <input type="text" name="sibilingsone" id="sibilingsone" placeholder="Sibilings Name">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Age</label>
+                            <input type="date" name="sibilingageone" id="sibilingageone" >
+                        </div>
+
+                        <div class="input-field">
+                            <label>Type</label>
+                           <select name="sibilingtypeone" id="sibilingtypeone" required>
+                                <option disabled selected>Select Type</option>
+                                <option>Elder Brother</option>
+                                <option>Elder Sister</option>
+                                <option>Younger Brother</option>
+                                <option>Younger Sister</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                           <label>Sibilings Name</label>
+                            <input type="text" name="Sibilingtwo" id="Sibilingstwo" placeholder="Sibilings Name" >
+                        </div>
+
+                        <div class="input-field">
+                            <label>Age</label>
+                            <input type="date" name="sibilingagetwo" id="sibilingagetwo" >
+                        </div>
+
+                        <div class="input-field">
+                             <label>Type</label>
+                           <select name="sibilingtypetwo" id="sibilingtypetwo" required>
+                                <option disabled selected>Select Type</option>
+                                <option>Elder Brother</option>
+                                <option>Elder Sister</option>
+                                <option>Younger Brother</option>
+                                <option>Younger Sister</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Back</span>
+                        </div>
+                        
+                        <button class="sumbit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.querySelector("form"),
+        nextBtn = form.querySelector(".nextBtn"),
+        backBtn = form.querySelector(".backBtn"),
+        allInput = form.querySelectorAll(".first input");
+
+
+nextBtn.addEventListener("click", ()=> {
+    allInput.forEach(input => {
+        if(input.value != ""){
+            form.classList.add('secActive');
+        }else{
+            form.classList.remove('secActive');
+        }
+    })
+})
+
+backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+
+    </script>
+</body>
+</html>
